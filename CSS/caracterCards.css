@@ -1,0 +1,37 @@
+.caracterCardContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.caracterCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;;
+    height: 90vh;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background-color: #f2f2f2;
+}
+.caracterCard img{
+    width: 60%;
+    border-radius: 10px;
+}
+.caracterCard ul{
+    list-style-type: none;
+    padding: 5%;
+}
+.caracterCard ul li{
+    padding: 5px;
+    border: .5px solid black;
+}
