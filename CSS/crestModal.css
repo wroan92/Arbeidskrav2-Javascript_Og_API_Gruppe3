@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  box-sizing: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(to right, rgb(16, 15, 15), rgb(37, 35, 35));
+}
+
+/* Frontpage-styling*/
+
+.hogwartsHouseCrests {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 10%;
+}
+
+button.cardBtn {
+  border: none;
+}
+
+.card {
+  border: 1px solid rgb(38, 36, 36);
+  border-radius: 4px;
+  box-shadow: 1px 1px 19px 0px rgba(0, 0, 0, 0.642);
+}
+
+.cardImg {
+  max-width: 400px;
+}
+
+.cardImg img {
+  transition: 0.5s ease;
+}
+
+.cardImg:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+
+/* Modal-styling */
+
+#gryffindorModal .modal-content {
+  background-image: linear-gradient(to right, rgb(31, 3, 3), rgb(44, 5, 5));
+  color: rgb(218, 214, 214);
+  text-align: center;
+}
+
+#gryffindorModal .modal-title {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+#huffelpuffModal .modal-content {
+  background-color: rgb(70, 57, 3);
+  background-image: linear-gradient(to right, rgb(42, 34, 2), rgb(115, 84, 6));
+  color: rgb(218, 214, 214);
+  text-align: center;
+}
+#huffelpuffModal .modal-title {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+#ravenclawModal .modal-content {
+  background-image: linear-gradient(to right, rgb(14, 14, 36), rgb(30, 30, 57));
+  color: rgb(218, 214, 214);
+  text-align: center;
+}
+#ravenclawModal .modal-title {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+#slytherinModal .modal-content {
+  background-image: linear-gradient(to right, rgb(21, 27, 24), rgb(32, 42, 36));
+  color: rgb(218, 214, 214);
+  text-align: center;
+}
+#slytherinModal .modal-title {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.btnHouse {
+  padding: 5px 100px;
+  border-radius: 4px;
+  text-align: center;
+  border: none;
+  margin-right: 35%;
+  background-color: rgb(218, 214, 214);
+  font-weight: 500;
+  font-size: 0.7rem;
+  box-shadow: 1px 1px 19px 0px rgba(0, 0, 0, 0.642);
+}
+
+.btnHouse:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transition: 0.05s ease;
+  font-weight: 600;
+  box-shadow: 1px 1px 19px 0px rgba(0, 0, 0, 0.642);
+}
+
+.modal-body p {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
