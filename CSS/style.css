@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body {
+  background-image: linear-gradient(to right, rgb(16, 15, 15), rgb(37, 35, 35));
+}
+
 .hogwartsHouseCrests {
   display: grid;
   grid-template-columns: auto auto;
@@ -14,6 +18,8 @@
 
 .card {
   margin: 15px;
+  border: none;
+  box-shadow: 1px 1px 19px 0px rgba(0, 0, 0, 0.642);
 }
 
 .card-img img {
