@@ -9,26 +9,36 @@ body {
 }
 
 .hogwartsHouseCrests {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-evenly;
-  margin: 25%;
-  margin-top: 10%;
+display: grid;
+grid-template-columns: auto auto;
+justify-content: center;
+gap: 25px;
+margin-top: 10%;
+}
+
+button.cardBtn{
+    border: none;
 }
 
 .card {
-  margin: 15px;
-  border: none;
-  box-shadow: 1px 1px 19px 0px rgba(0, 0, 0, 0.642);
+    border: 1px solid rgb(38, 36, 36);
+    border-radius: 4px;
+    box-shadow: 1px 1px 19px 0px rgba(0, 0, 0, 0.642);
 }
 
-.card-img img {
-  transition: 0.5s ease;
+.cardImg {
+max-width: 400px;
 }
 
-.card-img:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-  transition: 0.5s ease;
-}
+.cardImg img {
+    transition: 0.5s ease;
+  }
+  
+  .cardImg:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.5s ease;
+  }
+
+
