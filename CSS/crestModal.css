@@ -87,12 +87,15 @@ button.cardBtn {
   font-size: 1.5rem;
 }
 
+a {
+    width: 100%;
+}
+
 .btnHouse {
   padding: 5px 100px;
   border-radius: 4px;
   text-align: center;
   border: none;
-  margin-right: 35%;
   background-color: rgb(218, 214, 214);
   font-weight: 500;
   font-size: 0.7rem;
