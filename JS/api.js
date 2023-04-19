@@ -73,22 +73,22 @@ function showCharacters(data) {
     }
     // Hvis karakteren ikke har et bilde, så settes bilde til et bilde av Harry Potter logoen
     if (caracter.image === "") {
-      caracter.image = `img/harry-potter-logo.jpg`;
+      caracter.image = `Images/harry-potter-logo.jpg`;
     }
     // Switch som sjekker hvilket hus karakteren tilhører og setter variabelen houseColor til et bilde av huset
     let houseColor = "";
     switch (caracter.house) {
       case "Gryffindor":
-        houseImg = "img/MicrosoftTeams-image (3).png";
+        houseImg = "Images/Gryffindor.jpg";
         break;
       case "Slytherin":
-        houseImg = "img/MicrosoftTeams-image (4).png";
+        houseImg = "Images/Slytherin.jpg";
         break;
       case "Ravenclaw":
-        houseImg = "img/MicrosoftTeams-image.png";
+        houseImg = "Images/Ravenclaw.png";
         break;
       case "Hufflepuff":
-        houseImg = "img/MicrosoftTeams-image (2).png";
+        houseImg = "Images/Hufflepuff.jpg";
         break;
       default:
         houseImg = "white";
