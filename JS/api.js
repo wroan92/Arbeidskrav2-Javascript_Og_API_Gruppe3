@@ -4,7 +4,7 @@ let searchInput = document.querySelector("#searchInput");
 let houseDropdown = document.querySelector("#houseDropdown");
 // Henter data fra api og lagrer det i variabelen data
 fetch("https://hp-api.onrender.com/api/characters")
-// Konverterer data til json
+  // Konverterer data til json
   .then((Response) => Response.json())
   // Henter data fra variabelen data og lagrer det i variabelen data
   .then((data) => {
@@ -13,16 +13,16 @@ fetch("https://hp-api.onrender.com/api/characters")
     let filteredData = data;
     // Lytter etter endringer i søkefeltet og kaller på funksjonen searchInput med parameteret "input"
     searchInput.addEventListener("input", () => {
-      // variabelen searchValue lagrer verdien av søkefeltet i små bokstaver 
-      let searchValue = searchInput.value.toLowerCase(); 
+      // variabelen searchValue lagrer verdien av søkefeltet i små bokstaver
+      let searchValue = searchInput.value.toLowerCase();
       // Filtrerer ut alle karakterene i data som ikke inneholder søkeverdien fra searchValue
       filteredData = data.filter((caracter) =>
-        caracter.name.toLowerCase().includes(searchValue) 
+        caracter.name.toLowerCase().includes(searchValue)
       );
       // Filtrerer ut alle karakterene i arrayet som ikke tilhører huset valgt i dropdown-menyen
       if (houseDropdown.value !== "all") {
-        filteredData = filteredData.filter((caracter) =>
-          caracter.house === houseDropdown.value
+        filteredData = filteredData.filter(
+          (caracter) => caracter.house === houseDropdown.value
         );
       }
       // Viser resultatet av søket ved og kalle på funksjonen displayCharacters med parameteret filteredData, så den viser karakterene som er filtrert ut i i filteredData
@@ -32,8 +32,8 @@ fetch("https://hp-api.onrender.com/api/characters")
       // Ser om det er valgt et annet hus en alle
       if (houseDropdown.value !== "all") {
         // Hvis dropdown ikke er alle, filtreres karakterene fra data som tilhører det valgte huset og lagrer resultatet i filteredData
-        filteredData = data.filter((caracter) => 
-          caracter.house === houseDropdown.value
+        filteredData = data.filter(
+          (caracter) => caracter.house === houseDropdown.value
         );
         // Hvis brukeren har valgt alle hus, filtreres ikke karakterene fra data og alle husene vises
       } else {
@@ -44,7 +44,7 @@ fetch("https://hp-api.onrender.com/api/characters")
       if (searchInput.value !== "") {
         // Hvis søkefeltet ikke er tomt lagres veriden i searchValue
         let searchValue = searchInput.value.toLowerCase();
-      // Hvis det er tekst i søkefeltet så filtrers karakterene fra filteredData som inneholder søkeverdien fra searchValue
+        // Hvis det er tekst i søkefeltet så filtrers karakterene fra filteredData som inneholder søkeverdien fra searchValue
         filteredData = filteredData.filter((caracter) =>
           caracter.name.toLowerCase().includes(searchValue)
         );
@@ -52,12 +52,12 @@ fetch("https://hp-api.onrender.com/api/characters")
       // Kaller på funksjonen showCharacters med filteredData som parameter som viser resultatet av filtreringen basert på valgt hus og søkefelt.
       showCharacters(filteredData);
     });
-    showCharacters(filteredData); 
+    showCharacters(filteredData);
   });
 // funksjon som tar med seg data som parameter og viser karakterene i html
 function showCharacters(data) {
   // Tømmer html-elementet caracterCard
-  caracterCard.innerHTML = ""; 
+  caracterCard.innerHTML = "";
   // Går gjennom hver karakter i data (arrayet) med forEach for hver karakter legges variablene currentAge og ageClass til
   data.forEach((caracter) => {
     // Variabelen currentAge lagrer alderen til karakteren ved og trekke fra årstallet karakteren ble født fra 2023
@@ -67,7 +67,7 @@ function showCharacters(data) {
     if (caracter.alive === false) {
       currentAge = "Død";
       ageClass = "dead";
-    // Hvis informasjonen om karakterens alder ikke er tilgjengelig, så settes currentAge til "Uvisst"
+      // Hvis informasjonen om karakterens alder ikke er tilgjengelig, så settes currentAge til "Uvisst"
     } else if (caracter.yearOfBirth === null) {
       currentAge = "Uvisst";
     }
