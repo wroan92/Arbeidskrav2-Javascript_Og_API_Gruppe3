@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Harry Potter's World</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Hogwarts Logos by Tim Ohrel -->
+      <div class="hogwartsHouseCrests">
+        <!-- Gryffindor -->
+        <div class="card">
+          <button
+            type="button"
+            class="cardBtn"
+            data-bs-toggle="modal"
+            data-bs-target="#gryffindorModal"
+          >
+            <img
+              src="Images/Gryffindor.jpg"
+              class="cardImg"
+              alt="Gryffindor Crest"
+            />
+          </button>
+          <!-- Gryffindor Modal -->
+          <div
+            class="modal fade"
+            id="gryffindorModal"
+            tabindex="-1"
+            aria-labelledby="gryffindorModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="gryffindorModalLabel">
+                    Gryffindor House
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Gryffindor house is known for their bravery and courage.
+                    Famous Gryffindors include Harry Potter, Hermione Granger,
+                    and Ron Weasley.
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btnHouse"
+                    data-bs-dismiss="modal"
+                  >
+                    Gå videre til huset
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Huffelpuff -->
+        <div class="card">
+          <button
+            type="button"
+            class="cardBtn"
+            data-bs-toggle="modal"
+            data-bs-target="#huffelpuffModal"
+          >
+            <img
+              src="Images/Hufflepuff.jpg"
+              class="cardImg"
+              alt="Huffelpuff Crest"
+            />
+          </button>
+          <!-- Huffelpuff Modal -->
+          <div
+            class="modal fade"
+            id="huffelpuffModal"
+            tabindex="-1"
+            aria-labelledby="huffelpuffModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="huffelpuffModalLabel">
+                    Huffelpuff House
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Hufflepuff house is known for their loyalty and dedication.
+                    Famous Hufflepuffs include Cedric Diggory and Newt
+                    Scamander.
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btnHouse"
+                    data-bs-dismiss="modal"
+                  >
+                    Gå videre til huset 
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- Ravenclaw -->
+      <div class="card">
+        <button
+          type="button"
+          class="cardBtn"
+          data-bs-toggle="modal"
+          data-bs-target="#ravenclawModal"
+        >
+          <img
+            src="Images/Ravenclaw.png"
+            class="cardImg"
+            alt="Ravenclaw Crest"
+          />
+        </button>
+
+        <!-- Ravenclaw Modal -->
+        <div
+          class="modal fade"
+          id="ravenclawModal"
+          tabindex="-1"
+          aria-labelledby="ravenclawModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ravenclawModalLabel">
+                  Ravenclaw House
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Ravenclaw house is known for valuing intelligence, wit, and
+                  wisdom. Famous Ravenclaws include Luna Lovegood and Garrick
+                  Ollivander.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btnHouse"
+                  data-bs-dismiss="modal"
+                >
+                  Gå videre til huset
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slytherin -->
+      <div class="card">
+        <button
+          type="button"
+          class="cardBtn"
+          data-bs-toggle="modal"
+          data-bs-target="#slytherinModal"
+        >
+          <img
+            src="Images/Slytherin.jpg"
+            class="cardImg"
+            alt="Slytherin Crest"
+          />
+        </button>
+        <!-- Slytherin Modal -->
+        <div
+          class="modal fade"
+          id="slytherinModal"
+          tabindex="-1"
+          aria-labelledby="slytherinModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="slytherinModalLabel">
+                  Slytherin House
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Slytherin house is known for valuing cunning, ambition, and
+                  resourcefulness. Famous Slytherins include Severus Snape,
+                  Bellatrix Lestrange and Voldemort (Tom Riddle).
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btnHouse "
+                  data-bs-dismiss="modal"
+                >
+                  Gå videre til huset
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js
+    "></script>
+    <script src="./JS/api.js"></script>
+    <script src="./JS/script.js"></script>
+  </body>
+</html>
