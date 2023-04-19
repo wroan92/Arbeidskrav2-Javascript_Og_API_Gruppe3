@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Harry Potter's World</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/caracterCard.css">
+    <link rel="stylesheet" href="./CSS/addCaracterModal.css">
+  </head>
+  <body>
+    <main>
+     <a class="backIcon" href=""><img src="img/icons/arrow-small-left.png" alt="Back to prewious page icon"></a>
+     <a class="toTopIcon" href="#"><img src="img/icons/arrow-alt-to-top.png" alt="To the top icon"></a>
+      <div class="searchContainer">
+        <input type="text" id="searchInput" placeholder="Søk etter en karakter" />
+        <select id="houseDropdown">
+          <option value="all">Alle</option>
+          <option value="Gryffindor">Gryffindor</option>
+          <option value="Slytherin">Slytherin</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+        </select>
+      <img class="addCaracterBtn" id="addCaracterBtn" src="./img/icons/add.png" alt="">
+      </div>
+        <div id="caracterCardContainer" class="caracterCardContainer">
+        </div>
+    </main>
+    <script src="./JS/api.js"></script>
+    <script src="./JS/script.js"></script>
+    <script src="./JS/addACaracter.js"></script>
+  </body>
+</html>
