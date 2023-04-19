@@ -109,3 +109,6 @@ function showCharacters(data) {
     `;
   });
 }
+
+
+

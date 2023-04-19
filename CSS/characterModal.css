@@ -1,0 +1,53 @@
+div.modal-content {
+    background-color: rgb(118, 118, 118);
+}
+
+div.modal-header h1 {
+    text-align: center;
+    width: 100%;
+}
+
+.addCharacterForm {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px;
+    justify-content: center;
+}
+
+.addCharacterForm input#name {
+    width: 80%;
+    border: 1px solid  rgb(175, 174, 174) ;
+    border-radius: 6px;
+    margin: 5px;
+    padding: 10px;
+}
+.addCharacterForm input#age {
+    width: 80%;
+    border: 1px solid  rgb(175, 174, 174) ;
+    border-radius: 6px;
+    margin: 5px;
+    padding: 10px;
+}
+.addCharacterForm select#house {
+    width: 80%;
+    border: 1px solid  rgb(175, 174, 174) ;
+    border-radius: 6px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.addCharacterForm #addCharBtn{
+    width: 50%;
+    border: 1px solid  rgb(175, 174, 174) ;
+    border-radius: 6px;
+    margin: 5px;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+}
+
+.addCharacterForm Label {
+    width: 80%;
+}
