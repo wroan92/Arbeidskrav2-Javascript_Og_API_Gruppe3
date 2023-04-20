@@ -102,3 +102,8 @@ select {
   border-top-right-radius: 0px;
   padding: 1%;
 }
+
+div.shuffle button{
+  width: 10vh;
+  border-radius: 100px;
+}
