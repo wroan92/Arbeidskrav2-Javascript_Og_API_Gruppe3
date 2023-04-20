@@ -33,8 +33,26 @@ button.cardBtn {
 
 /* Modal-styling */
 
+.modal-backdrop {
+  opacity: 0.7 !important;
+}
+
+.modal {
+  margin-top: 100px;
+}
+
+.modal-body p{
+  padding: 5%;
+  font-size: 20px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
 #gryffindorModal .modal-content {
-  background-image: linear-gradient(to right, rgb(31, 3, 3), rgb(44, 5, 5));
+  background-image: linear-gradient(to right, rgb(31, 3, 3), rgb(84, 19, 19));
   color: rgb(218, 214, 214);
   text-align: center;
 }
@@ -46,7 +64,7 @@ button.cardBtn {
 
 #huffelpuffModal .modal-content {
   background-color: rgb(70, 57, 3);
-  background-image: linear-gradient(to right, rgb(42, 34, 2), rgb(115, 84, 6));
+  background-image: linear-gradient(to right, rgb(55, 46, 6), rgb(183, 157, 41));
   color: rgb(218, 214, 214);
   text-align: center;
 }
@@ -56,7 +74,7 @@ button.cardBtn {
 }
 
 #ravenclawModal .modal-content {
-  background-image: linear-gradient(to right, rgb(14, 14, 36), rgb(30, 30, 57));
+  background-image: linear-gradient(to right, rgb(15, 15, 30), rgb(34, 34, 60));
   color: rgb(218, 214, 214);
   text-align: center;
 }
@@ -66,7 +84,7 @@ button.cardBtn {
 }
 
 #slytherinModal .modal-content {
-  background-image: linear-gradient(to right, rgb(21, 27, 24), rgb(32, 42, 36));
+  background-image: linear-gradient(to right, rgb(21, 27, 24), rgb(26, 95, 54));
   color: rgb(218, 214, 214);
   text-align: center;
 }
@@ -80,7 +98,6 @@ button.cardBtn {
   border-radius: 4px;
   text-align: center;
   border: none;
-  margin-right: 35%;
   background-color: rgb(218, 214, 214);
   font-weight: 500;
   box-shadow: 1px 1px 19px 0px rgba(0, 0, 0, 0.642);
