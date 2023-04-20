@@ -55,47 +55,47 @@ fetch("https://hp-api.onrender.com/api/characters")
     showCharacters(filteredData);
   });
 // funksjon som tar med seg data som parameter og viser karakterene i html
-function showCharacters(data) {
-  // Tømmer html-elementet caracterCard
+
+
+function showCharacters(data, houseColor) {
   caracterCard.innerHTML = "";
-  // Går gjennom hver karakter i data (arrayet) med forEach for hver karakter legges variablene currentAge og ageClass til
   data.forEach((caracter) => {
-    // Variabelen currentAge lagrer alderen til karakteren ved og trekke fra årstallet karakteren ble født fra 2023
     let currentAge = 2023 - caracter.yearOfBirth;
     let ageClass = "";
-    // Hvis karakteren er død, så settes currentAge til "Død" og ageClass til "dead"
     if (caracter.alive === false) {
       currentAge = "Død";
       ageClass = "dead";
-      // Hvis informasjonen om karakterens alder ikke er tilgjengelig, så settes currentAge til "Uvisst"
     } else if (caracter.yearOfBirth === null) {
       currentAge = "Uvisst";
     }
-    // Hvis karakteren ikke har et bilde, så settes bilde til et bilde av Harry Potter logoen
     if (caracter.image === "") {
       caracter.image = `Images/harry-potter-logo.jpg`;
     }
-    // Switch som sjekker hvilket hus karakteren tilhører og setter variabelen houseColor til et bilde av huset
+
     let houseColor = "";
     switch (caracter.house) {
       case "Gryffindor":
-        houseImg = "Images/Gryffindor.jpg";
+        houseColor = "Gryffindor";
         break;
       case "Slytherin":
-        houseImg = "Images/Slytherin.jpg";
+        houseColor = "Slytherin";
         break;
       case "Ravenclaw":
-        houseImg = "Images/Ravenclaw.png";
+        houseColor = "Ravenclaw";
         break;
       case "Hufflepuff":
-        houseImg = "Images/Hufflepuff.jpg";
+        houseColor = "Hufflepuff";
         break;
       default:
-        houseImg = "white";
+        houseColor = "white";
     }
-    // Legger til html-elementer med informasjon om karakteren i html-elementet caracterCard
+
+    let backgroundStyle = "";
+    if (houseColor !== "white") {
+      backgroundStyle = `background-image: url('Images/${houseColor}.jpg'); background-size: full; background-position: right;`
+    }
     caracterCard.innerHTML += `
-      <div class="caracterCard" style="width: 18rem; background-image: url('${houseImg}'); background-size: full; background-position: right;">
+      <div class="caracterCard" style="width: 18rem; ${backgroundStyle}">
         <img src="${caracter.image}" alt="Harry Potter caracter image">
         <div class="card-body">
           <h1>${caracter.name}</h1>
@@ -108,4 +108,22 @@ function showCharacters(data) {
       </div>
     `;
   });
+}
+
+
+//karakter
+function addNewCharacter() {
+  const name = document.getElementById("name").value;
+  const age = document.getElementById("age").value;
+  const house = document.getElementById("house").value;
+
+  const newCharacter = {
+    name: name,
+    yearOfBirth: 2023 - age,
+    house: house,
+    alive: true,
+    image: ""
+  };
+
+  showCharacters([newCharacter], house.toLowerCase());
 }
