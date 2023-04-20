@@ -1,9 +1,79 @@
+
+.Harry-Potter{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+img.HP-logo {
+  width: 500px;
+}
+
+@keyframes HP-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 1;}
+}
+
+img.HP-logo{
+  animation: HP-fade-inout 8s infinite alternate;
+}
+
+
+.footprints{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
+
+img.footprints1{
+  width: 20vh;
+}
+
+@keyframes fp-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+}
+
+img.footprints1{
+  animation: fp-fade-inout 5s infinite alternate;
+
+}
+
+img.footprints2{
+  width: 20vh;
+}
+
+@keyframes fp-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+}
+
+img.footprints2{
+  animation: fp-fade-inout 5s infinite alternate;
+  animation-delay: 3s;
+}
+
+img.footprints3{
+  width: 20vh;
+}
+
+@keyframes fp-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+}
+
+img.footprints3{
+  animation: fp-fade-inout 5s infinite alternate;
+  animation-delay: 6s;
+}
+
+
 .hogwartsHouseCrests {
   display: grid;
   grid-template-columns: auto auto;
   justify-content: center;
   gap: 25px;
-  margin-top: 10%;
+  margin-top:;
 }
 
 button.cardBtn {

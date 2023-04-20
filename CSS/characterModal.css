@@ -49,17 +49,22 @@ div.modal-header h1 {
     color: black;
 }
 
-.addCharacterForm #randomCharBtn{
+.addCharacterForm Label {
+    width: 80%;
+}
+
+button#ranCharBtn{
     width: 50%;
     border: 1px solid  rgb(175, 174, 174) ;
     border-radius: 6px;
     margin: 5px;
-    margin-top: 40px;
+    margin-top: 10px;
     padding: 10px;
     background-color: white;
-    color: black; 
+    color: black;
 }
 
-.addCharacterForm Label {
-    width: 80%;
+#randomModal .modal-body{
+    display: flex;
+    justify-content: center;
 }

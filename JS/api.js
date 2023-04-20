@@ -125,3 +125,5 @@ function addNewCharacter() {
 
   showCharacters([newCharacter], house.toLowerCase());
 }
+
+
