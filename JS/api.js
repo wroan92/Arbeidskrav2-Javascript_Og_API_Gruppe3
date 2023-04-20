@@ -56,7 +56,6 @@ fetch("https://hp-api.onrender.com/api/characters")
   });
 // funksjon som tar med seg data som parameter og viser karakterene i html
 
-
 function showCharacters(data, houseColor) {
   caracterCard.innerHTML = "";
   data.forEach((caracter) => {
@@ -92,7 +91,7 @@ function showCharacters(data, houseColor) {
 
     let backgroundStyle = "";
     if (houseColor !== "white") {
-      backgroundStyle = `background-image: url('Images/${houseColor}.jpg'); background-size: full; background-position: right;`
+      backgroundStyle = `background-image: url('Images/${houseColor}.jpg'); background-size: full; background-position: right;`;
     }
     caracterCard.innerHTML += `
       <div class="caracterCard" style="width: 18rem; ${backgroundStyle}">
@@ -109,7 +108,6 @@ function showCharacters(data, houseColor) {
     `;
   });
 }
-
 
 //karakter
 function addNewCharacter() {
