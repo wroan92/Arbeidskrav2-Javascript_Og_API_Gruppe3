@@ -1,4 +1,7 @@
 // TODO: Husk og slette og endre kommentarer, de komentarene som er her nå er for og huske hvordan logikken og koden er skrevet.
+const urlParams = new URLSearchParams(window.location.search);
+const houseName = urlParams.get("houseName");
+
 let caracterCard = document.querySelector("#caracterCardContainer");
 let searchInput = document.querySelector("#searchInput");
 let houseDropdown = document.querySelector("#houseDropdown");
@@ -28,6 +31,21 @@ fetch("https://hp-api.onrender.com/api/characters")
       // Viser resultatet av søket ved og kalle på funksjonen displayCharacters med parameteret filteredData, så den viser karakterene som er filtrert ut i i filteredData
       showCharacters(filteredData);
     });
+    // Sjekker om "houseName" er definert i URL'en
+    if (houseName) {
+      // Velger det valgte huset i dropdownen
+      houseDropdown.value = houseName;
+      // Filtrerer karakterene fra data som tilhører det valgte huset og lagrer resultatet i filteredData
+      filteredData = data.filter(
+        (caracter) => caracter.house === houseDropdown.value
+      );
+    } else {
+      // Hvis "houseName" ikke er definert, bruker vi dropdownens nåværende valg
+      filteredData = data.filter(
+        (caracter) => caracter.house === houseDropdown.value
+      );
+    }
+
     houseDropdown.addEventListener("change", () => {
       // Ser om det er valgt et annet hus en alle
       if (houseDropdown.value !== "all") {
@@ -77,6 +95,7 @@ function showCharacters(data) {
     }
     // Switch som sjekker hvilket hus karakteren tilhører og setter variabelen houseColor til et bilde av huset
     let houseColor = "";
+    // Vurdere og gjøre denne om til en if else?
     switch (caracter.house) {
       case "Gryffindor":
         houseImg = "Images/Gryffindor.jpg";

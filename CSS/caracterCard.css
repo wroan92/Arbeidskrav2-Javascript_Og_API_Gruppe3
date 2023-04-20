@@ -73,6 +73,37 @@
 .addCaracterBtn:hover {
   transform: scale(1.1);
 }
+
+.imgTooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: 2%;
+}
+/* Kode fra w3schools https://www.w3schools.com/css/css_tooltip.asp */
+.imgTooltip .tooltipText {
+  visibility: hidden;
+  background-color: #222;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3;
+  width: 200px;
+}
+
+.imgTooltip:hover .tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
+
+
 select {
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -83,6 +114,9 @@ select {
   width: 10%;
   height: 50%;
   border: none;
+}
+select:focus{
+  outline: none;
 }
 .searchContainer {
   display: flex;
@@ -101,4 +135,7 @@ select {
   border-bottom-right-radius: 0px;
   border-top-right-radius: 0px;
   padding: 1%;
+}
+.searchContainer input:focus{
+  outline: none;
 }
