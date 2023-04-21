@@ -6,56 +6,72 @@ let searchInput = document.querySelector("#searchInput");
 let houseDropdown = document.querySelector("#houseDropdown");
 
 let newCharacterForm = document.querySelector("#newCharacterForm");
-let dataFromLocalStorage = JSON.parse(localStorage.getItem("characters")) || [];
-let filteredData = dataFromLocalStorage;
-console.log(filteredData);
-fetch("https://hp-api.onrender.com/api/characters")
-  .then((Response) => Response.json())
-  .then((data) => {
-    console.log(data);
-    filteredData = dataFromLocalStorage.concat(data);
 
-    searchInput.addEventListener("input", () => {
-      let searchValue = searchInput.value.toLowerCase();
-      filteredData = data.filter((caracter) =>
-        caracter.name.toLowerCase().includes(searchValue)
-      );
-      if (houseDropdown.value !== "all") {
-        filteredData = filteredData.filter(
-          (caracter) => caracter.house === houseDropdown.value
-        );
-      }
+const characters = localStorage.getItem("characters");
+
+if (characters) {
+  const parsedData = JSON.parse(characters);
+  showCharacters(parsedData);
+} else {
+  fetch("https://hp-api.onrender.com/api/characters")
+    .then((response) => response.json())
+    .then((data) => {
+      localStorage.setItem("characters", JSON.stringify(data));
       showCharacters(filteredData);
+    })
+    .catch((error) => {
+      alert = "Kunne ikke hente data fra API'et prøv og last inn siden på nytt";
     });
-    if (houseName) {
-      houseDropdown.value = houseName;
-      filteredData = data.filter(
-        (caracter) => caracter.house === houseDropdown.value
-      );
-    } else {
-      filteredData = data.filter(
+}
+
+const data = characters;
+
+if (data) {
+  const characters = JSON.parse(data);
+  console.log(characters);
+  searchInput.addEventListener("input", () => {
+    let searchValue = searchInput.value.toLowerCase();
+    filteredData = characters.filter((caracter) =>
+      caracter.name.toLowerCase().includes(searchValue)
+    );
+    if (houseDropdown.value !== "all") {
+      filteredData = filteredData.filter(
         (caracter) => caracter.house === houseDropdown.value
       );
     }
-
-    houseDropdown.addEventListener("change", () => {
-      if (houseDropdown.value !== "all") {
-        filteredData = data.filter(
-          (caracter) => caracter.house === houseDropdown.value
-        );
-      } else {
-        filteredData = data;
-      }
-      if (searchInput.value !== "") {
-        let searchValue = searchInput.value.toLowerCase();
-        filteredData = filteredData.filter((caracter) =>
-          caracter.name.toLowerCase().includes(searchValue)
-        );
-      }
-      showCharacters(filteredData);
-    });
     showCharacters(filteredData);
   });
+  if (houseName) {
+    houseDropdown.value = houseName;
+    filteredData = characters.filter(
+      (caracter) => caracter.house === houseDropdown.value
+    );
+  } else {
+    filteredData = characters.filter(
+      (caracter) => caracter.house === houseDropdown.value
+    );
+  }
+
+  houseDropdown.addEventListener("change", () => {
+    if (houseDropdown.value !== "all") {
+      filteredData = characters.filter(
+        (caracter) => caracter.house === houseDropdown.value
+      );
+    } else {
+      filteredData = characters;
+    }
+    if (searchInput.value !== "") {
+      let searchValue = searchInput.value.toLowerCase();
+      filteredData = filteredData.filter((caracter) =>
+        caracter.name.toLowerCase().includes(searchValue)
+      );
+    }
+    showCharacters(filteredData);
+  });
+  showCharacters(filteredData);
+} else {
+  console.log("Ingen data lagret i local storage");
+}
 
 newCharacterForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -71,11 +87,14 @@ newCharacterForm.addEventListener("submit", (event) => {
     alive: true,
     image: "",
   };
-  filteredData.push(newCharacter);
-  dataFromLocalStorage = filteredData;
-  localStorage.setItem("characters", JSON.stringify(dataFromLocalStorage));
-  showCharacters(filteredData);
+
+  let characters = JSON.parse(localStorage.getItem("characters"));
+  characters.push(newCharacter);
+  localStorage.setItem("characters", JSON.stringify(characters));
+
   newCharacterForm.reset();
+  showCharacters(filteredData);
+  location.reload();
 });
 
 function showCharacters(data) {
