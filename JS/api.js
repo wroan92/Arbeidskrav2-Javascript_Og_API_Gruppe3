@@ -77,8 +77,8 @@ newCharacterForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   let name = document.querySelector("#nameInput").value;
-  let house = document.querySelector("#houseInput").value;
   let age = document.querySelector("#ageInput").valueAsNumber;
+  let house = document.querySelector("#houseInput").value;
 
   let newCharacter = {
     name: name,
@@ -117,14 +117,14 @@ function showCharacters(data) {
     } else if (caracter.house === "Slytherin") {
       houseImg = "Images/Slytherin.jpg";
     } else if (caracter.house === "Ravenclaw") {
-      houseImg = "Images/Ravenclaw.png";
+      houseImg = "Images/Ravenclaw.jpg";
     } else if (caracter.house === "Hufflepuff") {
       houseImg = "Images/Hufflepuff.jpg";
     } else {
       houseImg = "";
     }
     caracterCard.innerHTML += `
-      <div class="caracterCard" style="width: 18rem; ${backgroundStyle}">
+      <div class="caracterCard" style="width: 18rem; background-image: url('${houseImg}'); background-size: full; background-position: right;">
         <img src="${caracter.image}" alt="Harry Potter caracter image">
         <div class="card-body">
           <h1>${caracter.name}</h1>
@@ -139,8 +139,8 @@ function showCharacters(data) {
   });
 }
 
-// random karakter 
-
+// random karakter
+// TODO: Endre get element til query selector, må også endre id og klasse navn i html
 const addCharacterBtn = document.getElementById("addCharacterBtn");
 addCharacterBtn.addEventListener("click", getRandomCharacter);
 
@@ -164,22 +164,16 @@ function showCharacter(caracter) {
     caracter.image = `Images/harry-potter-logo.jpg`;
   }
 
-  let houseColor = "";
-  switch (caracter.house) {
-    case "Gryffindor":
-      houseColor = "Gryffindor";
-      break;
-    case "Slytherin":
-      houseColor = "Slytherin";
-      break;
-    case "Ravenclaw":
-      houseColor = "Ravenclaw";
-      break;
-    case "Hufflepuff":
-      houseColor = "Hufflepuff";
-      break;
-    default:
-      houseColor = "white";
+  if (caracter.house === "Gryffindor") {
+    houseImg = "Images/Gryffindor.jpg";
+  } else if (caracter.house === "Slytherin") {
+    houseImg = "Images/Slytherin.jpg";
+  } else if (caracter.house === "Ravenclaw") {
+    houseImg = "Images/Ravenclaw.jpg";
+  } else if (caracter.house === "Hufflepuff") {
+    houseImg = "Images/Hufflepuff.jpg";
+  } else {
+    houseImg = "";
   }
 
   let backgroundStyle = "";
@@ -217,7 +211,3 @@ function addNewCharacter() {
 
   showCharacters([newCharacter], house.toLowerCase());
 }
-
-
-
-

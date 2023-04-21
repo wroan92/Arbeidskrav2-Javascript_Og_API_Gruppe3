@@ -18,20 +18,25 @@
   <body>
     <main>
       <!-- Søkefelt-->
-      <a class="backIcon" href="index.html"
-        ><img
+      <a class="backIcon" href="index.html">
+        <img
           src="Images/icons/arrow-small-left.png"
           alt="Back to prewious page icon"
-      /></a>
-      <a class="toTopIcon" href="#"
-        ><img src="Images/icons/arrow-alt-to-top.png" alt="To the top icon"
-      /></a>
+        />
+      </a>
+
+      <a class="toTopIcon" href="#">
+        <img src="Images/icons/arrow-alt-to-top.png" alt="To the top icon" />
+      </a>
+
       <div class="searchContainer">
         <input
           type="text"
           id="searchInput"
           placeholder="Søk etter en karakter"
+          title="Søk etter en karakter"
         />
+
         <select id="houseDropdown">
           <option value="all">Alle</option>
           <option value="Gryffindor">Gryffindor</option>
@@ -40,95 +45,89 @@
           <option value="Ravenclaw">Ravenclaw</option>
         </select>
         <!-- Ny karakter knapp-->
-        <button
-          type="button"
-          class="btn"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-        >
-          <div class="imgTooltip">
-          <img
-            class="addCaracterBtn"
-            id="addCaracterBtn"
-            src="./Images/icons/potterhead.com.png"
-            alt="open icon"
-          />
-        </button>
-        <!--Random karakter knapp-->
-        <button type="button" class="btn">
-          <img
-            class="addCharacterBtn"
-            id="addCharacterBtn"
-            src="./Images/icons/sortinghat.com.png"
-            alt="open icon"
-          />
-        </button>
-        <!-- Modal legg til karakter -->
-        <div
-          class="modal fade"
-          id="staticBackdrop"
-          data-bs-backdrop="hide"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="staticBackdropLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title" id="staticBackdropLabel">
-                  Legg til ny karakter
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
+        <div class="imgTooltip">
+          <button
+            type="button"
+            class="btn"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            <img
+              class="addCaracterBtn"
+              id="addCaracterBtn"
+              src="./Images/icons/potterhead.com.png"
+              alt="open icon"
+            />
+            <span class="tooltipText"
+              >Klikk på knappen for og lage en ny karakter</span
+            >
+          </button>
+        </div>
+        
+        <!-- Tilfeldig karakter knapp -->
+        <div class="imgTooltip">
+          <button type="button" class="btn">
+            <img
+              class="addCharacterBtn"
+              id="addCharacterBtn"
+              src="./Images/icons/sortinghat.com.png"
+              alt="open icon"
+            />
+          </button>
+          <span class="tooltipText"
+            >Klikk på knappen for og vise en tilfeldig karakter</span
+          >
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="hide"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="staticBackdropLabel">
+                Legg til ny karakter
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="owl-container">
+                <img
+                  class="owl-img"
+                  src="Images/icons/harry-potter-fandom-mail-hogwarts-paper-harry-potter-485826cc68b68ea0d0d893eb745ceb3e.png"
+                  alt="owl"
+                />
               </div>
-              <div class="modal-body">
-                <form class="addCharacterForm">
-                  <div class="owl-container">
-                    <img
-                      class="owl-img"
-                      src="Images/icons/harry-potter-fandom-mail-hogwarts-paper-harry-potter-485826cc68b68ea0d0d893eb745ceb3e.png"
-                      alt="owl"
-                    />
-                  </div>
-                  <label for="name">Navn:</label>
-                  <input type="text" id="name" name="name" required /><br />
-                  <label for="age">Alder:</label>
-                  <input type="number" id="age" name="age" required /><br />
-                  <label for="house">Hus:</label>
-                  <select id="house" name="house" required>
-                    <option value="Gryffindor">Gryffindor</option>
-                    <option value="Slytherin">Slytherin</option>
-                    <option value="Hufflepuff">Hufflepuff</option>
-                    <option value="Ravenclaw">Ravenclaw</option></select
-                  ><br />
-                  <button
-                    class="btn btn-secondary"
-                    type="button"
-                    id="addCharBtn"
-                    onclick="addNewCharacter()"
-                  >
-                    Legg til karakter
-                  </button>
-                </form>
-              </div>
+              <form id="newCharacterForm">
+                <label for="name">Navn:</label>
+                <input type="text" id="nameInput" name="name" required /><br />
+                <label for="age">Alder:</label>
+                <input type="number" id="ageInput" name="age" required /><br />
+                <label for="house">Hus:</label>
+                <select id="houseInput" name="house" required>
+                  <option value="Gryffindor">Gryffindor</option>
+                  <option value="Slytherin">Slytherin</option>
+                  <option value="Hufflepuff">Hufflepuff</option>
+                  <option value="Ravenclaw">Ravenclaw</option>
+                </select>
+                <br />
+                <button type="submit">Legg til karakteren</button>
+              </form>
             </div>
           </div>
-        </div>
-          <span class="tooltipText">Klikk på knappen for og lage en ny karakter</span>
-        </div>
-        <div class="imgTooltip">
-          <img
-          class="addCaracterBtn"
-          id="addCaracterBtn"
-          src="./Images/icons/dice-alt.png"
-          alt=""
-        />
-          <span class="tooltipText">Klikk på knappen for og vise en tilfeldig karakter</span>
         </div>
       </div>
       <div id="caracterCardContainer" class="caracterCardContainer"></div>

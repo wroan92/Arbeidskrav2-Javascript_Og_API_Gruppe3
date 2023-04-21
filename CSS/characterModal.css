@@ -1,80 +1,77 @@
-
 div.modal-content {
-    background-image: linear-gradient(to right, rgb(16, 15, 15), rgb(37, 35, 35));
+  background-image: linear-gradient(to right, rgb(16, 15, 15), rgb(37, 35, 35));
 }
 
 div.modal-header h1 {
-    text-align: center;
-    width: 100%;
-    color: rgb(192, 187, 187);
-    margin-left: 50px;
+  text-align: center;
+  width: 100%;
+  color: rgb(192, 187, 187);
+  margin-left: 50px;
 }
 
 .addCharacterForm {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 10px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 10px;
+  justify-content: center;
 }
 
-.addCharacterForm label{
-    color: rgb(192, 187, 187);
+.addCharacterForm label {
+  color: rgb(192, 187, 187);
 }
-
 
 .addCharacterForm input#name {
-    width: 80%;
-    border: 1px solid  rgb(151, 147, 147) ;
-    border-radius: 6px;
-    margin: 5px;
-    padding: 10px;
+  width: 80%;
+  border: 1px solid rgb(151, 147, 147);
+  border-radius: 6px;
+  margin: 5px;
+  padding: 10px;
 }
 .addCharacterForm input#age {
-    width: 80%;
-    border: 1px solid  rgb(175, 174, 174) ;
-    border-radius: 6px;
-    margin: 5px;
-    padding: 10px;
+  width: 80%;
+  border: 1px solid rgb(175, 174, 174);
+  border-radius: 6px;
+  margin: 5px;
+  padding: 10px;
 }
 .addCharacterForm select#house {
-    width: 80%;
-    border: 1px solid  rgb(175, 174, 174) ;
-    border-radius: 6px;
-    margin: 5px;
-    padding: 10px;
-    color: rgb(95, 93, 93);
+  width: 80%;
+  border: 1px solid rgb(175, 174, 174);
+  border-radius: 6px;
+  margin: 5px;
+  padding: 10px;
+  color: rgb(95, 93, 93);
 }
 
-.addCharacterForm #addCharBtn{
-    width: 50%;
-    border: 1px solid  rgb(175, 174, 174) ;
-    border-radius: 6px;
-    margin: 50px 5px;
-    padding: 10px;
-    background-color: white;
-    color: rgb(95, 93, 93);
+.addCharacterForm #addCharBtn {
+  width: 50%;
+  border: 1px solid rgb(175, 174, 174);
+  border-radius: 6px;
+  margin: 50px 5px;
+  padding: 10px;
+  background-color: white;
+  color: rgb(95, 93, 93);
 }
-.addCharacterForm #addCharBtn:hover{
--webkit-transform: scale(1.05);
+.addCharacterForm #addCharBtn:hover {
+  -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
   transition: 0.1s ease;
   font-weight: 600;
-  }
+}
 
 .addCharacterForm Label {
-    width: 80%;
+  width: 80%;
 }
 
-
-.owl-container{
-    display: flex;
-    justify-content: center;
-    width: 100%;
+.owl-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-img.owl-img{
-    width: 200px;
-    opacity: 0.6;
+img.owl-img {
+  width: 200px;
+  opacity: 0.6;
 }
