@@ -105,7 +105,7 @@ function showCharacters(data) {
       houseImg = "";
     }
     caracterCard.innerHTML += `
-      <div class="caracterCard" style="width: 18rem; background-image: url('${houseImg}'); background-size: full; background-position: right;">
+      <div class="caracterCard" style="width: 18rem; ${backgroundStyle}">
         <img src="${caracter.image}" alt="Harry Potter caracter image">
         <div class="card-body">
           <h1>${caracter.name}</h1>
@@ -119,3 +119,86 @@ function showCharacters(data) {
     `;
   });
 }
+
+// random karakter 
+
+const addCharacterBtn = document.getElementById("addCharacterBtn");
+addCharacterBtn.addEventListener("click", getRandomCharacter);
+
+async function getRandomCharacter() {
+  const response = await fetch("https://hp-api.onrender.com/api/characters");
+  const data = await response.json();
+  const randomCharacter = data[Math.floor(Math.random() * data.length)];
+  showCharacter(randomCharacter);
+}
+
+function showCharacter(caracter) {
+  let currentAge = 2023 - caracter.yearOfBirth;
+  let ageClass = "";
+  if (caracter.alive === false) {
+    currentAge = "Død";
+    ageClass = "dead";
+  } else if (caracter.yearOfBirth === null) {
+    currentAge = "Uvisst";
+  }
+  if (caracter.image === "") {
+    caracter.image = `Images/harry-potter-logo.jpg`;
+  }
+
+  let houseColor = "";
+  switch (caracter.house) {
+    case "Gryffindor":
+      houseColor = "Gryffindor";
+      break;
+    case "Slytherin":
+      houseColor = "Slytherin";
+      break;
+    case "Ravenclaw":
+      houseColor = "Ravenclaw";
+      break;
+    case "Hufflepuff":
+      houseColor = "Hufflepuff";
+      break;
+    default:
+      houseColor = "white";
+  }
+
+  let backgroundStyle = "";
+  if (houseColor !== "white") {
+    backgroundStyle = `background-image: url('Images/${houseColor}.jpg'); background-size: full; background-position: right;`;
+  }
+  caracterCard.innerHTML = `
+    <div class="caracterCard" style="width: 18rem; ${backgroundStyle}">
+      <img src="${caracter.image}" alt="Harry Potter caracter image">
+      <div class="card-body">
+        <h1>${caracter.name}</h1>
+        <p class="card-text"></p>
+      </div>
+      <ul>
+        <li>House: ${caracter.house}</li>
+        <li class="${ageClass}" >Alder: ${currentAge} </li>
+      </ul>
+    </div>
+  `;
+}
+
+//karakter
+function addNewCharacter() {
+  const name = document.getElementById("name").value;
+  const age = document.getElementById("age").value;
+  const house = document.getElementById("house").value;
+
+  const newCharacter = {
+    name: name,
+    yearOfBirth: 2023 - age,
+    house: house,
+    alive: true,
+    image: ""
+  };
+
+  showCharacters([newCharacter], house.toLowerCase());
+}
+
+
+
+

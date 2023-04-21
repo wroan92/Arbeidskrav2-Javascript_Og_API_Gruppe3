@@ -15,27 +15,34 @@
   justify-content: space-around;
   align-items: center;
   align-content: center;
-  height: 50vh;
+  height: 40vh;
   margin: 1%;
   padding: 1%;
-  box-shadow: 0 5px 8px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 3px 21px 4px rgba(0,0,0,0.54);
   border-radius: 10px;
   background-color: #616161;
   transition: all 0.5s ease-in-out;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: 0.5px solid black (255, 217, 0, 0.301);
 }
+
 .caracterCard h1 {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 400;
 }
 .caracterCard:hover {
   transform: scale(1.1);
 }
 .caracterCard img {
   height: 60%;
-  border-radius: 10px;
+  margin-bottom: 10px;
+  border-radius: 100px;
+  box-shadow: -1px 7px 43px 15px rgba(0,0,0,0.78);
+  border: 0.2px solid rgb(17, 17, 17);
 }
 .caracterCard ul {
-  box-shadow: 5px 5px 20px 0 rgba(255, 255, 255, 0.212);
+  box-shadow: -1px 7px 43px 15px rgba(0,0,0,0.55);
+  border-radius: 8px;
   width: 100%;
   list-style-type: none;
   padding: 5%;
@@ -43,9 +50,11 @@
 .caracterCard ul li {
   margin: 1%;
   padding: 1%;
+  text-align: center;
 }
+
 .dead {
-  color: red;
+  color: black;
   font-weight: bold;
 }
 
@@ -66,13 +75,24 @@
 .toTopIcon:hover {
   transform: scale(1.1);
 }
-.addCaracterBtn {
-  margin-left: 2%;
+img#addCaracterBtn {
+  margin-right: 5%;
   transition: ease-in-out 0.3s;
+  width: 50px;
+}
+
+img#addCharacterBtn{
+  margin-right: 5%;
+  transition: ease-in-out 0.3s;
+  width: 60px;
 }
 .addCaracterBtn:hover {
   transform: scale(1.1);
 }
+.addCharacterBtn:hover {
+  transform: scale(1.1);
+}
+
 
 .imgTooltip {
   position: relative;
@@ -138,4 +158,14 @@ select:focus{
 }
 .searchContainer input:focus{
   outline: none;
+}
+
+div.shuffle button{
+  width: 10vh;
+  border-radius: 100px;
+}
+
+div.shuffle button{
+  width: 10vh;
+  border-radius: 100px;
 }
