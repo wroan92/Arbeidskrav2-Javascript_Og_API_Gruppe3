@@ -17,6 +17,7 @@
   </head>
   <body>
     <main>
+      <!-- Søkefelt-->
       <a class="backIcon" href="index.html"
         ><img
           src="Images/icons/arrow-small-left.png"
@@ -38,7 +39,6 @@
           <option value="Hufflepuff">Hufflepuff</option>
           <option value="Ravenclaw">Ravenclaw</option>
         </select>
-
         <!-- Ny karakter knapp-->
         <button
           type="button"
@@ -53,12 +53,8 @@
             alt="open icon"
           />
         </button>
-
         <!--Random karakter knapp-->
-        <button
-          type="button"
-          class="btn"
-        >
+        <button type="button" class="btn">
           <img
             class="addCharacterBtn"
             id="addCharacterBtn"
@@ -80,7 +76,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h1 class="modal-title" id="staticBackdropLabel">
-                  Lag ny karakter
+                  Legg til ny karakter
                 </h1>
                 <button
                   type="button"
@@ -91,12 +87,17 @@
               </div>
               <div class="modal-body">
                 <form class="addCharacterForm">
+                  <div class="owl-container">
+                    <img
+                      class="owl-img"
+                      src="Images/icons/harry-potter-fandom-mail-hogwarts-paper-harry-potter-485826cc68b68ea0d0d893eb745ceb3e.png"
+                      alt="owl"
+                    />
+                  </div>
                   <label for="name">Navn:</label>
                   <input type="text" id="name" name="name" required /><br />
-
                   <label for="age">Alder:</label>
                   <input type="number" id="age" name="age" required /><br />
-
                   <label for="house">Hus:</label>
                   <select id="house" name="house" required>
                     <option value="Gryffindor">Gryffindor</option>
@@ -117,7 +118,6 @@
             </div>
           </div>
         </div>
-      
       </div>
       <div id="caracterCardContainer" class="caracterCardContainer"></div>
     </main>
