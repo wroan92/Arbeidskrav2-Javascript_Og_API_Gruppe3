@@ -142,7 +142,7 @@ function showCharacters(data) {
 
 // random karakter
 // TODO: Endre get element til query selector, må også endre id og klasse navn i html
-const addCharacterBtn = document.getElementById("addCharacterBtn");
+const addCharacterBtn = document.querySelector("#randomCharacterBtn");
 addCharacterBtn.addEventListener("click", getRandomCharacter);
 
 async function getRandomCharacter() {
@@ -178,8 +178,8 @@ function showCharacter(caracter) {
   }
 
   let backgroundStyle = "";
-  if (houseColor !== "white") {
-    backgroundStyle = `background-image: url('Images/${houseColor}.jpg'); background-size: full; background-position: right;`;
+  if (houseImg !== "white") {
+    backgroundStyle = `background-image: url('Images/${houseImg}.jpg'); background-size: full; background-position: right;`;
   }
   caracterCard.innerHTML = `
     <div class="caracterCard" style="width: 18rem; ${backgroundStyle}">
@@ -196,19 +196,4 @@ function showCharacter(caracter) {
   `;
 }
 
-//karakter
-function addNewCharacter() {
-  const name = document.getElementById("name").value;
-  const age = document.getElementById("age").value;
-  const house = document.getElementById("house").value;
 
-  const newCharacter = {
-    name: name,
-    yearOfBirth: 2023 - age,
-    house: house,
-    alive: true,
-    image: ""
-  };
-
-  showCharacters([newCharacter], house.toLowerCase());
-}

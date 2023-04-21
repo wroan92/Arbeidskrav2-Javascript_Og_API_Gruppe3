@@ -81,7 +81,7 @@ img#addCaracterBtn {
   width: 50px;
 }
 
-img#addCharacterBtn {
+img#randomCharacterBtn {
   margin-right: 5%;
   transition: ease-in-out 0.3s;
   width: 60px;
@@ -89,7 +89,7 @@ img#addCharacterBtn {
 .addCaracterBtn:hover {
   transform: scale(1.1);
 }
-.addCharacterBtn:hover {
+.randomCharacterBtn:hover {
   transform: scale(1.1);
 }
 
