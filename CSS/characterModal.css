@@ -9,33 +9,34 @@ div.modal-header h1 {
   margin-left: 50px;
 }
 
-.addCharacterForm {
+form#newCharacterForm {
   display: flex;
-  flex-wrap: wrap;
+flex-wrap: wrap;
   width: 100%;
   margin: 10px;
   justify-content: center;
+  
 }
 
-.addCharacterForm label {
+form#newCharacterForm label {
   color: rgb(192, 187, 187);
 }
 
-.addCharacterForm input#name {
+input#nameInput {
   width: 80%;
   border: 1px solid rgb(151, 147, 147);
   border-radius: 6px;
   margin: 5px;
   padding: 10px;
 }
-.addCharacterForm input#age {
+input#ageInput {
   width: 80%;
   border: 1px solid rgb(175, 174, 174);
   border-radius: 6px;
   margin: 5px;
   padding: 10px;
 }
-.addCharacterForm select#house {
+select#houseInput {
   width: 80%;
   border: 1px solid rgb(175, 174, 174);
   border-radius: 6px;
@@ -44,7 +45,7 @@ div.modal-header h1 {
   color: rgb(95, 93, 93);
 }
 
-.addCharacterForm #addCharBtn {
+form#newCharacterForm button {
   width: 50%;
   border: 1px solid rgb(175, 174, 174);
   border-radius: 6px;
@@ -53,7 +54,7 @@ div.modal-header h1 {
   background-color: white;
   color: rgb(95, 93, 93);
 }
-.addCharacterForm #addCharBtn:hover {
+form#newCharacterForm button:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
@@ -61,7 +62,7 @@ div.modal-header h1 {
   font-weight: 600;
 }
 
-.addCharacterForm Label {
+form#newCharacterForm Label {
   width: 80%;
 }
 

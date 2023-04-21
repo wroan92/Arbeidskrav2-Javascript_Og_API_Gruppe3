@@ -140,8 +140,6 @@ function showCharacters(data) {
   });
 }
 
-// random karakter
-// TODO: Endre get element til query selector, må også endre id og klasse navn i html
 const addCharacterBtn = document.querySelector("#randomCharacterBtn");
 addCharacterBtn.addEventListener("click", getRandomCharacter);
 
@@ -149,10 +147,10 @@ async function getRandomCharacter() {
   const response = await fetch("https://hp-api.onrender.com/api/characters");
   const data = await response.json();
   const randomCharacter = data[Math.floor(Math.random() * data.length)];
-  showCharacter(randomCharacter);
+  showRandomCharacter(randomCharacter);
 }
 
-function showCharacter(caracter) {
+function showRandomCharacter(caracter) {
   let currentAge = 2023 - caracter.yearOfBirth;
   let ageClass = "";
   if (caracter.alive === false) {
@@ -179,7 +177,7 @@ function showCharacter(caracter) {
 
   let backgroundStyle = "";
   if (houseImg !== "white") {
-    backgroundStyle = `background-image: url('Images/${houseImg}.jpg'); background-size: full; background-position: right;`;
+    backgroundStyle = `background-image: url('${houseImg}'); background-size: full; background-position: right;`;
   }
   caracterCard.innerHTML = `
     <div class="caracterCard" style="width: 18rem; ${backgroundStyle}">
@@ -195,5 +193,4 @@ function showCharacter(caracter) {
     </div>
   `;
 }
-
 
