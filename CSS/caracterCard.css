@@ -64,7 +64,8 @@
 }
 
 .backIcon {
-  margin-left: 1%;
+  width: 4vh;
+  margin-left: 8%;
   position: absolute;
   transition: ease-in-out 0.3s;
 }
@@ -72,22 +73,21 @@
   transform: scale(1.1);
 }
 .toTopIcon {
+  width: 4vh;
   position: fixed;
   right: 2%;
-  bottom: 2%;
+  bottom: 5%;
   transition: ease-in-out 0.3s;
 }
 .toTopIcon:hover {
   transform: scale(1.1);
 }
 img#addCaracterBtn {
-  margin-right: 5%;
   transition: ease-in-out 0.3s;
   width: 50px;
 }
 
 img#randomCharacterBtn {
-  margin-right: 5%;
   transition: ease-in-out 0.3s;
   width: 60px;
 }
