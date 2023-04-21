@@ -46,6 +46,7 @@
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
         >
+          <div class="imgTooltip">
           <img
             class="addCaracterBtn"
             id="addCaracterBtn"
@@ -118,7 +119,30 @@
             </div>
           </div>
         </div>
+          <span class="tooltipText">Klikk på knappen for og lage en ny karakter</span>
+        </div>
+        <div class="imgTooltip">
+          <img
+          class="addCaracterBtn"
+          id="addCaracterBtn"
+          src="./Images/icons/dice-alt.png"
+          alt=""
+        />
+          <span class="tooltipText">Klikk på knappen for og vise en tilfeldig karakter</span>
+        </div>
       </div>
+      <form id="newCharacterForm">
+        <label for="nameInput">Navn:</label>
+        <input type="text" id="nameInput" name="name">
+        
+        <label for="houseInput">Hus:</label>
+        <input type="text" id="houseInput" name="house">
+        
+        <label for="ageInput">Alder:</label>
+        <input type="number" id="ageInput" name="age">
+        
+        <button type="submit">Legg til karakter</button>
+      </form>
       <div id="caracterCardContainer" class="caracterCardContainer"></div>
     </main>
     <script
@@ -127,7 +151,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="./JS/api.js"></script>
-    <script src="./JS/script.js"></script>
-    <script src="./JS/addACaracter.js"></script>
   </body>
 </html>
