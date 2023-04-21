@@ -1,0 +1,171 @@
+.caracterCardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+}
+.caracterCard {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  height: 40vh;
+  margin: 1%;
+  padding: 1%;
+  box-shadow: 0px 3px 21px 4px rgba(0,0,0,0.54);
+  border-radius: 10px;
+  background-color: #616161;
+  transition: all 0.5s ease-in-out;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: 0.5px solid black (255, 217, 0, 0.301);
+}
+
+.caracterCard h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.caracterCard:hover {
+  transform: scale(1.1);
+}
+.caracterCard img {
+  height: 60%;
+  margin-bottom: 10px;
+  border-radius: 100px;
+  box-shadow: -1px 7px 43px 15px rgba(0,0,0,0.78);
+  border: 0.2px solid rgb(17, 17, 17);
+}
+.caracterCard ul {
+  box-shadow: -1px 7px 43px 15px rgba(0,0,0,0.55);
+  border-radius: 8px;
+  width: 100%;
+  list-style-type: none;
+  padding: 5%;
+}
+.caracterCard ul li {
+  margin: 1%;
+  padding: 1%;
+  text-align: center;
+}
+
+.dead {
+  color: black;
+  font-weight: bold;
+}
+
+.backIcon {
+  margin-left: 1%;
+  position: absolute;
+  transition: ease-in-out 0.3s;
+}
+.backIcon:hover {
+  transform: scale(1.1);
+}
+.toTopIcon {
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  transition: ease-in-out 0.3s;
+}
+.toTopIcon:hover {
+  transform: scale(1.1);
+}
+img#addCaracterBtn {
+  margin-right: 5%;
+  transition: ease-in-out 0.3s;
+  width: 50px;
+}
+
+img#addCharacterBtn{
+  margin-right: 5%;
+  transition: ease-in-out 0.3s;
+  width: 60px;
+}
+.addCaracterBtn:hover {
+  transform: scale(1.1);
+}
+.addCharacterBtn:hover {
+  transform: scale(1.1);
+}
+
+
+.imgTooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: 2%;
+}
+/* Kode fra w3schools https://www.w3schools.com/css/css_tooltip.asp */
+.imgTooltip .tooltipText {
+  visibility: hidden;
+  background-color: #222;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3;
+  width: 200px;
+}
+
+.imgTooltip:hover .tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+select {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  padding: 5px;
+  font-size: 16px;
+  width: 10%;
+  height: 50%;
+  border: none;
+}
+select:focus{
+  outline: none;
+}
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  margin-top: 2%;
+}
+.searchContainer input {
+  width: 25%;
+  height: 50%;
+  border: none;
+  border-right: 0.1px solid #000000;
+  border-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  padding: 1%;
+}
+.searchContainer input:focus{
+  outline: none;
+}
+
+div.shuffle button{
+  width: 10vh;
+  border-radius: 100px;
+}
+
+div.shuffle button{
+  width: 10vh;
+  border-radius: 100px;
+}

@@ -1,0 +1,181 @@
+
+.Harry-Potter{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+img.HP-logo {
+  width: 400px;
+}
+
+@keyframes HP-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 1;}
+}
+
+img.HP-logo{
+  animation: HP-fade-inout 8s infinite alternate;
+}
+
+
+.footprints{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
+
+img.footprints1{
+  width: 20vh;
+}
+
+@keyframes fp-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+}
+
+img.footprints1{
+  animation: fp-fade-inout 5s infinite alternate;
+
+}
+
+img.footprints2{
+  width: 20vh;
+}
+
+@keyframes fp-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+}
+
+img.footprints2{
+  animation: fp-fade-inout 5s infinite alternate;
+  animation-delay: 3s;
+}
+
+img.footprints3{
+  width: 20vh;
+}
+
+@keyframes fp-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+}
+
+img.footprints3{
+  animation: fp-fade-inout 5s infinite alternate;
+  animation-delay: 6s;
+}
+
+
+.hogwartsHouseCrests {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 25px;
+}
+
+button.cardBtn {
+  border: none;
+}
+
+.card {
+  border: 1px solid rgb(38, 36, 36);
+  border-radius: 4px;
+  box-shadow: 1px 1px 19px 0px rgba(0, 0, 0, 0.642);
+}
+
+.cardImg {
+  max-width: 400px;
+}
+
+.cardImg img {
+  transition: 0.5s ease;
+}
+
+.cardImg:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+
+/* Modal-styling */
+
+.modal-backdrop {
+  opacity: 0.9 !important;
+}
+
+.modal {
+  margin-top: 100px;
+}
+
+.modal-body p{
+  padding: 5%;
+  font-size: 20px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+#gryffindorModal .modal-content {
+  background-image: linear-gradient(to right, rgb(31, 3, 3), rgb(84, 19, 19));
+  color: rgb(218, 214, 214);
+  text-align: center;
+}
+
+#gryffindorModal .modal-title {
+  width: 100%;
+  font-size: 2.5rem;
+}
+
+#huffelpuffModal .modal-content {
+  background-color: rgb(70, 57, 3);
+  background-image: linear-gradient(to right, rgb(55, 46, 6), rgb(183, 157, 41));
+  color: rgb(218, 214, 214);
+  text-align: center;
+}
+#huffelpuffModal .modal-title {
+  width: 100%;
+  font-size: 2.5rem;
+}
+
+#ravenclawModal .modal-content {
+  background-image: linear-gradient(to right, rgb(15, 15, 30), rgb(34, 34, 60));
+  color: rgb(218, 214, 214);
+  text-align: center;
+}
+#ravenclawModal .modal-title {
+  width: 100%;
+  font-size: 2.5rem;
+}
+
+#slytherinModal .modal-content {
+  background-image: linear-gradient(to right, rgb(21, 27, 24), rgb(26, 95, 54));
+  color: rgb(218, 214, 214);
+  text-align: center;
+}
+#slytherinModal .modal-title {
+  width: 100%;
+  font-size: 2.5rem;
+}
+
+.btnHouse {
+  padding: 5px 100px;
+  border-radius: 4px;
+  text-align: center;
+  border: none;
+  background-color: rgb(218, 214, 214);
+  font-weight: 500;
+  box-shadow: 1px 1px 19px 0px rgba(0, 0, 0, 0.642);
+}
+
+.btnHouse:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transition: 0.05s ease;
+  font-weight: 600;
+  box-shadow: 1px 1px 19px 0px rgba(0, 0, 0, 0.642);
+}

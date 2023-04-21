@@ -1,101 +1,130 @@
-// TODO: Husk og slette og endre kommentarer, de komentarene som er her nå er for og huske hvordan logikken og koden er skrevet.
+const urlParams = new URLSearchParams(window.location.search);
+const houseName = urlParams.get("houseName");
+
 let caracterCard = document.querySelector("#caracterCardContainer");
 let searchInput = document.querySelector("#searchInput");
 let houseDropdown = document.querySelector("#houseDropdown");
-// Henter data fra api og lagrer det i variabelen data
-fetch("https://hp-api.onrender.com/api/characters")
-// Konverterer data til json
-  .then((Response) => Response.json())
-  // Henter data fra variabelen data og lagrer det i variabelen data
-  .then((data) => {
-    console.log(data);
-    // Variabelen filteredData lagrer data fra variabelen data
-    let filteredData = data;
-    // Lytter etter endringer i søkefeltet og kaller på funksjonen searchInput med parameteret "input"
-    searchInput.addEventListener("input", () => {
-      // variabelen searchValue lagrer verdien av søkefeltet i små bokstaver 
-      let searchValue = searchInput.value.toLowerCase(); 
-      // Filtrerer ut alle karakterene i data som ikke inneholder søkeverdien fra searchValue
-      filteredData = data.filter((caracter) =>
-        caracter.name.toLowerCase().includes(searchValue) 
+
+let newCharacterForm = document.querySelector("#newCharacterForm");
+
+const characters = localStorage.getItem("characters");
+
+if (characters) {
+  const parsedData = JSON.parse(characters);
+  showCharacters(parsedData);
+} else {
+  fetch("https://hp-api.onrender.com/api/characters")
+    .then((response) => response.json())
+    .then((data) => {
+      localStorage.setItem("characters", JSON.stringify(data));
+      showCharacters(filteredData);
+    })
+    .catch((error) => {
+      alert = "Kunne ikke hente data fra API'et prøv og last inn siden på nytt";
+    });
+}
+
+const data = characters;
+
+if (data) {
+  const characters = JSON.parse(data);
+  console.log(characters);
+  searchInput.addEventListener("input", () => {
+    let searchValue = searchInput.value.toLowerCase();
+    filteredData = characters.filter((caracter) =>
+      caracter.name.toLowerCase().includes(searchValue)
+    );
+    if (houseDropdown.value !== "all") {
+      filteredData = filteredData.filter(
+        (caracter) => caracter.house === houseDropdown.value
       );
-      // Filtrerer ut alle karakterene i arrayet som ikke tilhører huset valgt i dropdown-menyen
-      if (houseDropdown.value !== "all") {
-        filteredData = filteredData.filter((caracter) =>
-          caracter.house === houseDropdown.value
-        );
-      }
-      // Viser resultatet av søket ved og kalle på funksjonen displayCharacters med parameteret filteredData, så den viser karakterene som er filtrert ut i i filteredData
-      showCharacters(filteredData);
-    });
-    houseDropdown.addEventListener("change", () => {
-      // Ser om det er valgt et annet hus en alle
-      if (houseDropdown.value !== "all") {
-        // Hvis dropdown ikke er alle, filtreres karakterene fra data som tilhører det valgte huset og lagrer resultatet i filteredData
-        filteredData = data.filter((caracter) => 
-          caracter.house === houseDropdown.value
-        );
-        // Hvis brukeren har valgt alle hus, filtreres ikke karakterene fra data og alle husene vises
-      } else {
-        filteredData = data;
-      }
-      // For og kunne søke innenfor valgte hus
-      // Ser om søkefeltet er tomt
-      if (searchInput.value !== "") {
-        // Hvis søkefeltet ikke er tomt lagres veriden i searchValue
-        let searchValue = searchInput.value.toLowerCase();
-      // Hvis det er tekst i søkefeltet så filtrers karakterene fra filteredData som inneholder søkeverdien fra searchValue
-        filteredData = filteredData.filter((caracter) =>
-          caracter.name.toLowerCase().includes(searchValue)
-        );
-      }
-      // Kaller på funksjonen showCharacters med filteredData som parameter som viser resultatet av filtreringen basert på valgt hus og søkefelt.
-      showCharacters(filteredData);
-    });
-    showCharacters(filteredData); 
+    }
+    showCharacters(filteredData);
   });
-// funksjon som tar med seg data som parameter og viser karakterene i html
+  if (houseName) {
+    houseDropdown.value = houseName;
+    filteredData = characters.filter(
+      (caracter) => caracter.house === houseDropdown.value
+    );
+  } else {
+    filteredData = characters.filter(
+      (caracter) => caracter.house === houseDropdown.value
+    );
+  }
+
+  houseDropdown.addEventListener("change", () => {
+    if (houseDropdown.value !== "all") {
+      filteredData = characters.filter(
+        (caracter) => caracter.house === houseDropdown.value
+      );
+    } else {
+      filteredData = characters;
+    }
+    if (searchInput.value !== "") {
+      let searchValue = searchInput.value.toLowerCase();
+      filteredData = filteredData.filter((caracter) =>
+        caracter.name.toLowerCase().includes(searchValue)
+      );
+    }
+    showCharacters(filteredData);
+  });
+  showCharacters(filteredData);
+} else {
+  console.log("Ingen data lagret i local storage");
+}
+
+newCharacterForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  let name = document.querySelector("#nameInput").value;
+  let house = document.querySelector("#houseInput").value;
+  let age = document.querySelector("#ageInput").valueAsNumber;
+
+  let newCharacter = {
+    name: name,
+    house: house,
+    yearOfBirth: 2023 - age,
+    alive: true,
+    image: "",
+  };
+
+  let characters = JSON.parse(localStorage.getItem("characters"));
+  characters.push(newCharacter);
+  localStorage.setItem("characters", JSON.stringify(characters));
+
+  newCharacterForm.reset();
+  showCharacters(filteredData);
+  location.reload();
+});
+
 function showCharacters(data) {
-  // Tømmer html-elementet caracterCard
-  caracterCard.innerHTML = ""; 
-  // Går gjennom hver karakter i data (arrayet) med forEach for hver karakter legges variablene currentAge og ageClass til
+  caracterCard.innerHTML = "";
   data.forEach((caracter) => {
-    // Variabelen currentAge lagrer alderen til karakteren ved og trekke fra årstallet karakteren ble født fra 2023
     let currentAge = 2023 - caracter.yearOfBirth;
     let ageClass = "";
-    // Hvis karakteren er død, så settes currentAge til "Død" og ageClass til "dead"
     if (caracter.alive === false) {
       currentAge = "Død";
       ageClass = "dead";
-    // Hvis informasjonen om karakterens alder ikke er tilgjengelig, så settes currentAge til "Uvisst"
     } else if (caracter.yearOfBirth === null) {
       currentAge = "Uvisst";
     }
-    // Hvis karakteren ikke har et bilde, så settes bilde til et bilde av Harry Potter logoen
     if (caracter.image === "") {
-      caracter.image = `img/harry-potter-logo.jpg`;
+      caracter.image = `Images/harry-potter-logo.jpg`;
     }
-    // Switch som sjekker hvilket hus karakteren tilhører og setter variabelen houseColor til et bilde av huset
-    let houseColor = "";
-    switch (caracter.house) {
-      case "Gryffindor":
-        houseImg = "img/MicrosoftTeams-image (3).png";
-        break;
-      case "Slytherin":
-        houseImg = "img/MicrosoftTeams-image (4).png";
-        break;
-      case "Ravenclaw":
-        houseImg = "img/MicrosoftTeams-image.png";
-        break;
-      case "Hufflepuff":
-        houseImg = "img/MicrosoftTeams-image (2).png";
-        break;
-      default:
-        houseImg = "white";
+
+    if (caracter.house === "Gryffindor") {
+      houseImg = "Images/Gryffindor.jpg";
+    } else if (caracter.house === "Slytherin") {
+      houseImg = "Images/Slytherin.jpg";
+    } else if (caracter.house === "Ravenclaw") {
+      houseImg = "Images/Ravenclaw.png";
+    } else if (caracter.house === "Hufflepuff") {
+      houseImg = "Images/Hufflepuff.jpg";
+    } else {
+      houseImg = "";
     }
-    // Legger til html-elementer med informasjon om karakteren i html-elementet caracterCard
     caracterCard.innerHTML += `
-      <div class="caracterCard" style="width: 18rem; background-image: url('${houseImg}'); background-size: full; background-position: right;">
+      <div class="caracterCard" style="width: 18rem; ${backgroundStyle}">
         <img src="${caracter.image}" alt="Harry Potter caracter image">
         <div class="card-body">
           <h1>${caracter.name}</h1>
@@ -109,3 +138,86 @@ function showCharacters(data) {
     `;
   });
 }
+
+// random karakter 
+
+const addCharacterBtn = document.getElementById("addCharacterBtn");
+addCharacterBtn.addEventListener("click", getRandomCharacter);
+
+async function getRandomCharacter() {
+  const response = await fetch("https://hp-api.onrender.com/api/characters");
+  const data = await response.json();
+  const randomCharacter = data[Math.floor(Math.random() * data.length)];
+  showCharacter(randomCharacter);
+}
+
+function showCharacter(caracter) {
+  let currentAge = 2023 - caracter.yearOfBirth;
+  let ageClass = "";
+  if (caracter.alive === false) {
+    currentAge = "Død";
+    ageClass = "dead";
+  } else if (caracter.yearOfBirth === null) {
+    currentAge = "Uvisst";
+  }
+  if (caracter.image === "") {
+    caracter.image = `Images/harry-potter-logo.jpg`;
+  }
+
+  let houseColor = "";
+  switch (caracter.house) {
+    case "Gryffindor":
+      houseColor = "Gryffindor";
+      break;
+    case "Slytherin":
+      houseColor = "Slytherin";
+      break;
+    case "Ravenclaw":
+      houseColor = "Ravenclaw";
+      break;
+    case "Hufflepuff":
+      houseColor = "Hufflepuff";
+      break;
+    default:
+      houseColor = "white";
+  }
+
+  let backgroundStyle = "";
+  if (houseColor !== "white") {
+    backgroundStyle = `background-image: url('Images/${houseColor}.jpg'); background-size: full; background-position: right;`;
+  }
+  caracterCard.innerHTML = `
+    <div class="caracterCard" style="width: 18rem; ${backgroundStyle}">
+      <img src="${caracter.image}" alt="Harry Potter caracter image">
+      <div class="card-body">
+        <h1>${caracter.name}</h1>
+        <p class="card-text"></p>
+      </div>
+      <ul>
+        <li>House: ${caracter.house}</li>
+        <li class="${ageClass}" >Alder: ${currentAge} </li>
+      </ul>
+    </div>
+  `;
+}
+
+//karakter
+function addNewCharacter() {
+  const name = document.getElementById("name").value;
+  const age = document.getElementById("age").value;
+  const house = document.getElementById("house").value;
+
+  const newCharacter = {
+    name: name,
+    yearOfBirth: 2023 - age,
+    house: house,
+    alive: true,
+    image: ""
+  };
+
+  showCharacters([newCharacter], house.toLowerCase());
+}
+
+
+
+

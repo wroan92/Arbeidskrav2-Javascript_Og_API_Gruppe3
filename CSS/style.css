@@ -1,62 +1,9 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 25px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color: #000000;
-}
-.backIcon{
-    margin-left: 1%;
-    position: absolute;
-    transition: ease-in-out 0.3s;
-}
-.backIcon:hover{
-    transform: scale(1.1);
-}
-.toTopIcon{
-    position: fixed;
-    right: 2%;
-    bottom: 2%;
-    transition: ease-in-out 0.3s;
-}
-.toTopIcon:hover{
-    transform: scale(1.1);
-	}
-    .addCaracterBtn{
-       margin-left: 2%;
-       transition: ease-in-out 0.3s;
-    }
-    .addCaracterBtn:hover{
-        transform: scale(1.1);
-    }
-select {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
-    padding: 5px;
-    font-size: 16px;
-    width:10%;
-    height: 50%;
-    border: none;
-  }
-.searchContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-    margin-top: 2%;
-}
-.searchContainer input{
-    width: 25%;
-    height: 50%;
-    border: none;
-    border-right: .1px solid #000000;
-    border-radius: 10px;
-    border-bottom-right-radius: 0px;
-    border-top-right-radius: 0px;
-    padding: 1%;
+
+body {
+  background-image: linear-gradient(to right, rgb(16, 15, 15), rgb(37, 35, 35));
 }
