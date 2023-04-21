@@ -1,3 +1,4 @@
+// TODO: endre api.js til script.js
 const urlParams = new URLSearchParams(window.location.search);
 const houseName = urlParams.get("houseName");
 
