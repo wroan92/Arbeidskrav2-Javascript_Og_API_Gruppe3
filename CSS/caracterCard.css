@@ -75,11 +75,21 @@
 .toTopIcon:hover {
   transform: scale(1.1);
 }
-.addCaracterBtn {
+img#addCaracterBtn {
   margin-right: 5%;
   transition: ease-in-out 0.3s;
+  width: 50px;
+}
+
+img#addCharacterBtn{
+  margin-right: 5%;
+  transition: ease-in-out 0.3s;
+  width: 60px;
 }
 .addCaracterBtn:hover {
+  transform: scale(1.1);
+}
+.addCharacterBtn:hover {
   transform: scale(1.1);
 }
 
