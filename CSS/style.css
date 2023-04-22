@@ -30,10 +30,10 @@ img.HP-logo{
 
 .footprints{
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
-  margin-top: 50px;
+  margin-top: 30px;
 }
-
 img.footprints1{
   width: 20vh;
 }
@@ -44,7 +44,7 @@ img.footprints1{
 }
 
 img.footprints1{
-  animation: fp-fade-inout 5s infinite alternate;
+  animation: fp-fade-inout 30s infinite alternate;
 
 }
 
@@ -58,7 +58,7 @@ img.footprints2{
 }
 
 img.footprints2{
-  animation: fp-fade-inout 5s infinite alternate;
+  animation: fp-fade-inout 30s infinite alternate;
   animation-delay: 3s;
 }
 
@@ -72,9 +72,93 @@ img.footprints3{
 }
 
 img.footprints3{
-  animation: fp-fade-inout 5s infinite alternate;
+  animation: fp-fade-inout 30s infinite alternate;
   animation-delay: 6s;
 }
+img.footprints4{
+  width: 20vh;
+}
+
+@keyframes fp-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+}
+
+img.footprints4{
+  animation: fp-fade-inout 30s infinite alternate;
+  animation-delay: 9s;
+}
+
+img.footprints5{
+  width: 20vh;
+}
+
+@keyframes fp-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+}
+
+img.footprints5{
+  animation: fp-fade-inout 30s infinite alternate;
+  animation-delay: 12s;
+}
+
+img.footprints6{
+  width: 20vh;
+}
+
+@keyframes fp-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+}
+
+img.footprints6{
+  animation: fp-fade-inout 30s infinite alternate;
+  animation-delay: 15s;
+}
+
+img.footprints7{
+  width: 20vh;
+}
+
+@keyframes fp-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+}
+
+img.footprints7{
+  animation: fp-fade-inout 30s infinite alternate;
+  animation-delay: 18s;
+}
+
+img.footprints8{
+  width: 20vh;
+}
+
+@keyframes fp-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+}
+
+img.footprints8{
+  animation: fp-fade-inout 30s infinite alternate;
+  animation-delay: 21s;
+}
+
+img.footprints9{
+  width: 20vh;
+}
+
+@keyframes fp-fade-inout {
+  100%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+}
+
+img.footprints9{
+  animation: fp-fade-inout 30s infinite alternate;
+  animation-delay: 24s;
+}
+
 
 
 .hogwartsHouseCrests {
