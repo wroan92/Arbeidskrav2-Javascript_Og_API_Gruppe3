@@ -116,6 +116,7 @@ img#randomCharacterBtn {
   position: absolute;
   top: 100%;
   left: 50%;
+  width: 200px;
   margin-left: -100px;
   opacity: 0;
   transition: opacity 0.3;
@@ -125,7 +126,7 @@ img#randomCharacterBtn {
 .imgTooltip:hover .tooltipText {
   visibility: visible;
   opacity: 1;
-  font-size: 12px;
+  font-size: 1.2rem;
   padding: 0;
 }
 

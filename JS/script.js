@@ -1,4 +1,3 @@
-// TODO: endre api.js til script.js
 const urlParams = new URLSearchParams(window.location.search);
 const houseName = urlParams.get("houseName");
 
@@ -71,7 +70,7 @@ if (data) {
   });
   showCharacters(filteredData);
 } else {
-  console.log("Ingen data lagret i local storage");
+  alert = "Kunne ikke hente data prøv og last inn siden på nytt";
 }
 
 newCharacterForm.addEventListener("submit", (event) => {
