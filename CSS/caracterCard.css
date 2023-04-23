@@ -62,8 +62,8 @@
 }
 
 .dead {
-  color: darkred;
-  font-weight: 400;
+  color: rgb(163, 11, 11);
+  font-weight: 600;
 }
 
 /* Navigasjon / Søkefelt */
