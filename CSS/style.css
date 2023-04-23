@@ -3,163 +3,202 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Design forside-bilder med animasjoner */
 
 body {
   background-image: linear-gradient(to right, rgb(16, 15, 15), rgb(37, 35, 35));
 }
 
-.Harry-Potter{
+.HarryPotter {
   display: flex;
   justify-content: center;
   margin-top: 40px;
 }
 
-img.HP-logo {
+img.hpLogo {
   width: 400px;
 }
 
 @keyframes HP-fade-inout {
-  100%{ opacity: 0;}
-  0%{ opacity: 1;}
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
 }
 
-img.HP-logo{
+img.hpLogo {
   animation: HP-fade-inout 8s infinite alternate;
 }
 
-
-.footprints{
+.footprints {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-top: 30px;
+  margin-top: 5%;
 }
-img.footprints1{
+img.footprints1 {
   width: 20vh;
 }
 
 @keyframes fp-fade-inout {
-  100%{ opacity: 0;}
-  0%{ opacity: 0.5;}
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0.5;
+  }
 }
 
-img.footprints1{
+img.footprints1 {
   animation: fp-fade-inout 30s infinite alternate;
-
 }
 
-img.footprints2{
+img.footprints2 {
   width: 20vh;
 }
 
 @keyframes fp-fade-inout {
-  100%{ opacity: 0;}
-  0%{ opacity: 0.5;}
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0.5;
+  }
 }
 
-img.footprints2{
+img.footprints2 {
   animation: fp-fade-inout 30s infinite alternate;
   animation-delay: 3s;
 }
 
-img.footprints3{
+img.footprints3 {
   width: 20vh;
 }
 
 @keyframes fp-fade-inout {
-  100%{ opacity: 0;}
-  0%{ opacity: 0.5;}
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0.5;
+  }
 }
 
-img.footprints3{
+img.footprints3 {
   animation: fp-fade-inout 30s infinite alternate;
   animation-delay: 6s;
 }
-img.footprints4{
+img.footprints4 {
   width: 20vh;
 }
 
 @keyframes fp-fade-inout {
-  100%{ opacity: 0;}
-  0%{ opacity: 0.5;}
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0.5;
+  }
 }
 
-img.footprints4{
+img.footprints4 {
   animation: fp-fade-inout 30s infinite alternate;
   animation-delay: 9s;
 }
 
-img.footprints5{
+img.footprints5 {
   width: 20vh;
 }
 
 @keyframes fp-fade-inout {
-  100%{ opacity: 0;}
-  0%{ opacity: 0.5;}
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0.5;
+  }
 }
 
-img.footprints5{
+img.footprints5 {
   animation: fp-fade-inout 30s infinite alternate;
   animation-delay: 12s;
 }
 
-img.footprints6{
+img.footprints6 {
   width: 20vh;
 }
 
 @keyframes fp-fade-inout {
-  100%{ opacity: 0;}
-  0%{ opacity: 0.5;}
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0.5;
+  }
 }
 
-img.footprints6{
+img.footprints6 {
   animation: fp-fade-inout 30s infinite alternate;
   animation-delay: 15s;
 }
 
-img.footprints7{
+img.footprints7 {
   width: 20vh;
 }
 
 @keyframes fp-fade-inout {
-  100%{ opacity: 0;}
-  0%{ opacity: 0.5;}
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0.5;
+  }
 }
 
-img.footprints7{
+img.footprints7 {
   animation: fp-fade-inout 30s infinite alternate;
   animation-delay: 18s;
 }
 
-img.footprints8{
+img.footprints8 {
   width: 20vh;
 }
 
 @keyframes fp-fade-inout {
-  100%{ opacity: 0;}
-  0%{ opacity: 0.5;}
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0.5;
+  }
 }
 
-img.footprints8{
+img.footprints8 {
   animation: fp-fade-inout 30s infinite alternate;
   animation-delay: 21s;
 }
 
-img.footprints9{
+img.footprints9 {
   width: 20vh;
 }
 
 @keyframes fp-fade-inout {
-  100%{ opacity: 0;}
-  0%{ opacity: 0.5;}
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0.5;
+  }
 }
 
-img.footprints9{
+img.footprints9 {
   animation: fp-fade-inout 30s infinite alternate;
   animation-delay: 24s;
 }
 
-
+/* Forside-bilder av hus */
 
 .hogwartsHouseCrests {
   display: grid;
@@ -193,7 +232,7 @@ button.cardBtn {
   transition: 0.5s ease;
 }
 
-/* Modal-styling */
+/* Modaler */
 
 .modal-backdrop {
   opacity: 0.9 !important;
@@ -203,7 +242,7 @@ button.cardBtn {
   margin-top: 100px;
 }
 
-.modal-body p{
+.modal-body p {
   padding: 5%;
   font-size: 20px;
 }
@@ -226,7 +265,11 @@ button.cardBtn {
 
 #huffelpuffModal .modal-content {
   background-color: rgb(70, 57, 3);
-  background-image: linear-gradient(to right, rgb(55, 46, 6), rgb(183, 157, 41));
+  background-image: linear-gradient(
+    to right,
+    rgb(55, 46, 6),
+    rgb(183, 157, 41)
+  );
   color: rgb(218, 214, 214);
   text-align: center;
 }

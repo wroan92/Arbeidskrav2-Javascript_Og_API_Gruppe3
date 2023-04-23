@@ -3,6 +3,8 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+/* Karakterkort */
+
 .caracterCardContainer {
   display: flex;
   flex-direction: row;
@@ -63,6 +65,8 @@
   color: darkred;
   font-weight: 400;
 }
+
+/* Navigasjon / Søkefelt */
 
 .backIcon {
   width: 4vh;

@@ -66,13 +66,13 @@ form#newCharacterForm Label {
   width: 80%;
 }
 
-.owl-container {
+.owlContainer {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-img.owl-img {
+img.owlImg {
   width: 200px;
   opacity: 0.6;
 }
